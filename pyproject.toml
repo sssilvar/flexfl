@@ -29,6 +29,8 @@ FlexFL = "flexfl.__main__:cli"
 [tool.poetry.dependencies]
 python = "^3.10.0"
 click = "*"
+lightning = "^2.0.3"
+pandas = "^2.0.2"
 
 [tool.poetry.group.test.dependencies]
 bandit = "*"
@@ -56,6 +58,13 @@ myst_parser = "*"
 sphinx = "*"
 sphinx-autobuild = "*"
 sphinx-click = "*"
+
+
+[tool.poetry.group.dev.dependencies]
+torchvision = "^0.15.2"
+seaborn = "^0.12.2"
+jupyter = "^1.0.0"
+scikit-learn = "^1.2.2"
 
 [tool.isort]
 profile = "black"

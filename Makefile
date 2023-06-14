@@ -16,11 +16,11 @@ pydoc: ## Run a pydoc server and open the browser
 	poetry run python -m pydoc -b
 
 docs_build: ## Build the documentation
-	poetry run sphinx-apidoc --module-first -o docs/api src/example_project/
+	poetry run sphinx-apidoc --module-first -o docs/api src/flexfl/
 	poetry run sphinx-build --color docs docs/_build
 
 docs: ## Build and serve the documentation with live reloading on file changes
-	poetry run sphinx-apidoc --module-first -o docs/api src/example_project/
+	poetry run sphinx-apidoc --module-first -o docs/api src/flexfl/
 	poetry run sphinx-autobuild --open-browser docs docs/_build
 
 install: ## Run `poetry install`
