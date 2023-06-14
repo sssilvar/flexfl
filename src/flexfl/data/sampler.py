@@ -102,13 +102,20 @@ class FederatedSampler:
     def n_classes(self):
         """Compute the number of classes in the dataset."""
         # Compute the number of classes in the dataset
-        n_classes = len(self.dataset.targets.unique())
+        n_classes = len(self.classes)
         return n_classes
+
+    @property
+    def classes(self):
+        """Compute the classes in the dataset."""
+        # Compute the classes in the dataset
+        classes = np.unique(self.dataset.targets)
+        return classes
 
     def _split_dataset(self):
         """Split the dataset into clients."""
         # Get the indices per class in the dataset
-        self.class_idxs = [np.where(self.dataset.targets == i)[0] for i in range(self.n_classes)]
+        self.class_idxs = [np.where(self.dataset.targets == i)[0] for i in self.classes]
 
         # Sample using choice without replacement from the indices per class
         # respecting the proportions per class per client
